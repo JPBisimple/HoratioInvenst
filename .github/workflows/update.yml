@@ -1,0 +1,36 @@
+name: Opdater Horatio Invest rapport
+
+on:
+  schedule:
+    # Kører hverdage kl. 17:30 dansk tid (15:30 UTC)
+    - cron: '30 15 * * 1-5'
+  workflow_dispatch:  # Tillader manuel kørsel
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer afhængigheder
+        run: pip install yfinance
+
+      - name: Hent kurser og generer rapport
+        run: python fetch_prices.py
+
+      - name: Commit og push opdateret data + rapport
+        run: |
+          git config user.name "Horatio Bot"
+          git config user.email "bot@horatio-invest"
+          git add data/history.json docs/index.html
+          git diff --staged --quiet || git commit -m "Opdateret rapport $(date '+%Y-%m-%d')"
+          git push
