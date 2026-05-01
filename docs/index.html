@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horatio Invest – Porteføljerapport</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; color: #1e293b; }
+  header { background: #1e3a5f; color: white; padding: 24px 32px; }
+  header h1 { font-size: 1.6rem; font-weight: 700; }
+  header p { font-size: 0.9rem; opacity: 0.75; margin-top: 4px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 16px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .kpi { background: white; border-radius: 10px; padding: 18px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .kpi .label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: .05em; }
+  .kpi .value { font-size: 1.6rem; font-weight: 700; margin-top: 4px; }
+  .kpi .value.pos { color: #16a34a; }
+  .kpi .value.neg { color: #dc2626; }
+  .card { background: white; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 24px; margin-bottom: 24px; }
+  .card h2 { font-size: 1rem; font-weight: 600; margin-bottom: 16px; color: #334155; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  th { text-align: left; padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; }
+  td { padding: 10px 10px; border-bottom: 1px solid #f1f5f9; }
+  tr:hover td { background: #f8fafc; }
+  .num { text-align: right; }
+  .spark { width: 80px; height: 30px; }
+  .fx { font-size: 0.8rem; color: #64748b; margin-bottom: 20px; }
+  .chart-wrap { height: 260px; position: relative; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏦 Horatio Invest</h1>
+  <p>Porteføljerapport · Opdateret 2026-05-01</p>
+</header>
+<div class="container">
+  <div class="kpi-grid">
+    <div class="kpi">
+      <div class="label">Samlet værdi</div>
+      <div class="value">79,875 kr</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Samlet kostpris</div>
+      <div class="value">46,912 kr</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Gevinst/Tab</div>
+      <div class="value pos">+32,963 kr</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Afkast</div>
+      <div class="value pos">+70.27%</div>
+    </div>
+  </div>
+
+  <div class="fx">Valutakurser: NOK/DKK: <strong>0.6851</strong> &nbsp;|&nbsp; USD/DKK: <strong>6.3604</strong> &nbsp;|&nbsp; EUR/DKK: <strong>7.4716</strong></div>
+
+  <div class="card">
+    <h2>Porteføljeudvikling (DKK)</h2>
+    <div class="chart-wrap">
+      <canvas id="portfolioChart"></canvas>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Beholdning</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Aktie</th><th class="num">Stk.</th><th class="num">Kurs</th>
+          <th class="num">Kurs DKK</th><th class="num">GAK DKK</th>
+          <th class="num">Værdi DKK</th><th class="num">Afkast %</th>
+          <th class="num">Gevinst DKK</th><th>Trend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Taiwan Semiconductor (TSMC ADR)</td>
+          <td class="num">6</td>
+          <td class="num">396.06 USD</td>
+          <td class="num">2,519.10</td>
+          <td class="num">829.78</td>
+          <td class="num"><strong>15,115</strong></td>
+          <td class="num" style="color:#16a34a">+203.59%</td>
+          <td class="num" style="color:#16a34a">+10,136</td>
+          <td><canvas class="spark" data-values='[2519.1]'></canvas></td>
+        </tr>
+        <tr>
+          <td>Vestas Wind Systems</td>
+          <td class="num">70</td>
+          <td class="num">191.95 DKK</td>
+          <td class="num">191.95</td>
+          <td class="num">105.52</td>
+          <td class="num"><strong>13,436</strong></td>
+          <td class="num" style="color:#16a34a">+81.91%</td>
+          <td class="num" style="color:#16a34a">+6,050</td>
+          <td><canvas class="spark" data-values='[191.95]'></canvas></td>
+        </tr>
+        <tr>
+          <td>NVIDIA</td>
+          <td class="num">9</td>
+          <td class="num">199.57 USD</td>
+          <td class="num">1,269.35</td>
+          <td class="num">559.46</td>
+          <td class="num"><strong>11,424</strong></td>
+          <td class="num" style="color:#16a34a">+126.89%</td>
+          <td class="num" style="color:#16a34a">+6,389</td>
+          <td><canvas class="spark" data-values='[1269.35]'></canvas></td>
+        </tr>
+        <tr>
+          <td>NKT</td>
+          <td class="num">12</td>
+          <td class="num">929.5 DKK</td>
+          <td class="num">929.50</td>
+          <td class="num">528.83</td>
+          <td class="num"><strong>11,154</strong></td>
+          <td class="num" style="color:#16a34a">+75.77%</td>
+          <td class="num" style="color:#16a34a">+4,808</td>
+          <td><canvas class="spark" data-values='[929.5]'></canvas></td>
+        </tr>
+        <tr>
+          <td>Rheinmetall</td>
+          <td class="num">1</td>
+          <td class="num">1355.8 EUR</td>
+          <td class="num">10,130.00</td>
+          <td class="num">3,795.57</td>
+          <td class="num"><strong>10,130</strong></td>
+          <td class="num" style="color:#16a34a">+166.89%</td>
+          <td class="num" style="color:#16a34a">+6,334</td>
+          <td><canvas class="spark" data-values='[10130.0]'></canvas></td>
+        </tr>
+        <tr>
+          <td>Carlsberg B</td>
+          <td class="num">7</td>
+          <td class="num">867.4 DKK</td>
+          <td class="num">867.40</td>
+          <td class="num">846.29</td>
+          <td class="num"><strong>6,072</strong></td>
+          <td class="num" style="color:#16a34a">+2.49%</td>
+          <td class="num" style="color:#16a34a">+148</td>
+          <td><canvas class="spark" data-values='[867.4]'></canvas></td>
+        </tr>
+        <tr>
+          <td>Kongsberg Gruppen</td>
+          <td class="num">25</td>
+          <td class="num">310.0 NOK</td>
+          <td class="num">212.38</td>
+          <td class="num">120.15</td>
+          <td class="num"><strong>5,310</strong></td>
+          <td class="num" style="color:#16a34a">+76.76%</td>
+          <td class="num" style="color:#16a34a">+2,306</td>
+          <td><canvas class="spark" data-values='[212.38]'></canvas></td>
+        </tr>
+        <tr>
+          <td>Novo Nordisk B</td>
+          <td class="num">17</td>
+          <td class="num">273.0 DKK</td>
+          <td class="num">273.00</td>
+          <td class="num">457.77</td>
+          <td class="num"><strong>4,641</strong></td>
+          <td class="num" style="color:#dc2626">-40.36%</td>
+          <td class="num" style="color:#dc2626">-3,141</td>
+          <td><canvas class="spark" data-values='[273.0]'></canvas></td>
+        </tr>
+        <tr>
+          <td>Microsoft</td>
+          <td class="num">1</td>
+          <td class="num">407.78 USD</td>
+          <td class="num">2,593.64</td>
+          <td class="num">2,660.56</td>
+          <td class="num"><strong>2,594</strong></td>
+          <td class="num" style="color:#dc2626">-2.52%</td>
+          <td class="num" style="color:#dc2626">-67</td>
+          <td><canvas class="spark" data-values='[2593.64]'></canvas></td>
+        </tr></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+// Porteføljegraf
+const ctx = document.getElementById('portfolioChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ["2026-05-01"],
+    datasets: [{
+      label: 'Porteføljeværdi (DKK)',
+      data: [79875.19],
+      borderColor: '#1e3a5f',
+      backgroundColor: 'rgba(30,58,95,0.08)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 3,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { ticks: { callback: v => v.toLocaleString('da-DK') + ' kr' } },
+      x: { ticks: { maxTicksLimit: 12 } }
+    }
+  }
+});
+
+// Sparklines
+document.querySelectorAll('.spark').forEach(canvas => {
+  const values = JSON.parse(canvas.dataset.values || '[]');
+  if (values.length < 2) return;
+  const first = values[0], last = values[values.length - 1];
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: values.map((_, i) => i),
+      datasets: [{ data: values, borderColor: last >= first ? '#16a34a' : '#dc2626',
+        borderWidth: 1.5, pointRadius: 0, fill: false, tension: 0.3 }]
+    },
+    options: {
+      responsive: false, animation: false,
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: { x: { display: false }, y: { display: false } }
+    }
+  });
+});
+</script>
+</body>
+</html>
