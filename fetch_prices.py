@@ -4,17 +4,20 @@ import os
 from datetime import datetime, date
 
 # ── Portefølje ────────────────────────────────────────────────────────────────
+# gak        = GAK i lokal valuta (bruges til visning)
+# gak_dkk    = GAK i DKK (fast historisk værdi fra Nordnet - bruges til afkastberegning)
+# currency   = lokal valuta (bruges til kursomregning)
 PORTFOLIO = [
-    {"name": "Carlsberg B",                     "ticker": "CARL-B.CO", "shares": 7,  "gak": 846.29,  "gak_dkk": 846.29,  "currency": "DKK"},
-    {"name": "Kongsberg Gruppen",               "ticker": "KOG.OL",    "shares": 25, "gak": 175.38,  "gak_dkk": 110.49,  "currency": "NOK"},
-    {"name": "Kongsberg Maritime ASA",          "ticker": "KM.OL",     "shares": 25, "gak": 55.38,   "gak_dkk": 34.89,   "currency": "NOK"},
-    {"name": "Microsoft",                       "ticker": "MSFT",      "shares": 1,  "gak": 418.30,  "gak_dkk": 2882.09, "currency": "USD"},
-    {"name": "NKT",                             "ticker": "NKT.CO",    "shares": 12, "gak": 528.83,  "gak_dkk": 528.83,  "currency": "DKK"},
-    {"name": "Novo Nordisk B",                  "ticker": "NOVO-B.CO", "shares": 17, "gak": 457.77,  "gak_dkk": 457.77,  "currency": "DKK"},
-    {"name": "NVIDIA",                          "ticker": "NVDA",      "shares": 9,  "gak": 87.96,   "gak_dkk": 606.04,  "currency": "USD"},
-    {"name": "Rheinmetall",                     "ticker": "RHM.DE",    "shares": 1,  "gak": 508.00,  "gak_dkk": 3784.60, "currency": "EUR"},
-    {"name": "Taiwan Semiconductor (TSMC ADR)", "ticker": "TSM",       "shares": 6,  "gak": 130.46,  "gak_dkk": 898.87,  "currency": "USD"},
-    {"name": "Vestas Wind Systems",             "ticker": "VWS.CO",    "shares": 70, "gak": 105.52,  "gak_dkk": 105.52,  "currency": "DKK"},
+    {"name": "Carlsberg B",                      "ticker": "CARL-B.CO", "shares": 7,  "gak": 846.29,  "gak_dkk": 846.29,  "currency": "DKK"},
+    {"name": "Kongsberg Gruppen",                "ticker": "KOG.OL",    "shares": 25, "gak": 175.38,  "gak_dkk": 110.49,  "currency": "NOK"},
+    {"name": "Kongsberg Maritime ASA",           "ticker": "KM.OL",     "shares": 25, "gak": 55.38,   "gak_dkk": 34.89,   "currency": "NOK"},
+    {"name": "Microsoft",                        "ticker": "MSFT",      "shares": 1,  "gak": 418.30,  "gak_dkk": 2882.09, "currency": "USD"},
+    {"name": "NKT",                              "ticker": "NKT.CO",    "shares": 12, "gak": 528.83,  "gak_dkk": 528.83,  "currency": "DKK"},
+    {"name": "Novo Nordisk B",                   "ticker": "NOVO-B.CO", "shares": 17, "gak": 457.77,  "gak_dkk": 457.77,  "currency": "DKK"},
+    {"name": "NVIDIA",                           "ticker": "NVDA",      "shares": 9,  "gak": 87.96,   "gak_dkk": 606.04,  "currency": "USD"},
+    {"name": "Rheinmetall",                      "ticker": "RHM.DE",    "shares": 1,  "gak": 508.00,  "gak_dkk": 3784.60, "currency": "EUR"},
+    {"name": "Taiwan Semiconductor (TSMC ADR)",  "ticker": "TSM",       "shares": 6,  "gak": 130.46,  "gak_dkk": 898.87,  "currency": "USD"},
+    {"name": "Vestas Wind Systems",              "ticker": "VWS.CO",    "shares": 70, "gak": 105.52,  "gak_dkk": 105.52,  "currency": "DKK"},
 ]
 
 FX_TICKERS = {
@@ -49,27 +52,33 @@ def fetch_prices(fx):
             t = yf.Ticker(stock["ticker"])
             price = t.fast_info["last_price"]
             rate = fx.get(stock["currency"], 1.0)
+
+            # Kurs omregnet til DKK via dagens valutakurs
             price_dkk = round(price * rate, 2) if rate else None
-            gak_dkk = round(stock["gak"] * rate, 2) if rate else None
+
+            # GAK DKK er fast historisk værdi - ingen omregning
+            gak_dkk = stock["gak_dkk"]
+
             value_dkk = round(price_dkk * stock["shares"], 2) if price_dkk else None
-            cost_dkk = round(gak_dkk * stock["shares"], 2) if gak_dkk else None
-            gain_dkk = round(value_dkk - cost_dkk, 2) if (value_dkk and cost_dkk) else None
-            gain_pct = round((price_dkk - gak_dkk) / gak_dkk * 100, 2) if (price_dkk and gak_dkk) else None
+            cost_dkk  = round(gak_dkk * stock["shares"], 2)
+            gain_dkk  = round(value_dkk - cost_dkk, 2) if value_dkk else None
+            gain_pct  = round((price_dkk - gak_dkk) / gak_dkk * 100, 2) if (price_dkk and gak_dkk) else None
+
             results.append({
-                "name": stock["name"],
-                "ticker": stock["ticker"],
-                "shares": stock["shares"],
-                "gak": stock["gak"],
-                "gak_dkk": gak_dkk,
-                "currency": stock["currency"],
-                "price": round(price, 2),
+                "name":      stock["name"],
+                "ticker":    stock["ticker"],
+                "shares":    stock["shares"],
+                "gak":       stock["gak"],
+                "gak_dkk":   gak_dkk,
+                "currency":  stock["currency"],
+                "price":     round(price, 2),
                 "price_dkk": price_dkk,
                 "value_dkk": value_dkk,
-                "gain_dkk": gain_dkk,
-                "gain_pct": gain_pct,
-                "date": today,
+                "gain_dkk":  gain_dkk,
+                "gain_pct":  gain_pct,
+                "date":      today,
             })
-            print(f"✓ {stock['name']}: {price} {stock['currency']} = {price_dkk} DKK")
+            print(f"✓ {stock['name']}: {price} {stock['currency']} = {price_dkk} DKK | GAK DKK: {gak_dkk} | Afkast: {gain_pct}%")
         except Exception as e:
             print(f"✗ {stock['name']} ({stock['ticker']}): {e}")
     return results
@@ -82,11 +91,8 @@ def update_history(new_data):
             history = json.load(f)
 
     today = date.today().isoformat()
-    # Fjern evt. eksisterende entry for i dag (re-run)
     history = [h for h in history if h["date"] != today]
     history.append({"date": today, "stocks": new_data})
-
-    # Behold max 365 dage
     history = sorted(history, key=lambda x: x["date"])[-365:]
 
     os.makedirs("data", exist_ok=True)
@@ -98,21 +104,19 @@ def update_history(new_data):
 # ── Generer HTML-rapport ──────────────────────────────────────────────────────
 def generate_html(history, fx):
     today_data = history[-1]["stocks"] if history else []
-    today_str = history[-1]["date"] if history else "–"
+    today_str  = history[-1]["date"] if history else "–"
 
     total_value = sum(s["value_dkk"] for s in today_data if s["value_dkk"])
-    total_cost  = sum(s["gak_dkk"] * s["shares"] for s in today_data if s["gak_dkk"])
+    total_cost  = sum(s["gak_dkk"] * s["shares"] for s in today_data)
     total_gain  = total_value - total_cost
     total_pct   = (total_gain / total_cost * 100) if total_cost else 0
 
-    # Historiske porteføljeværdier til graf
     chart_labels = [h["date"] for h in history]
     chart_values = [
         round(sum(s["value_dkk"] for s in h["stocks"] if s["value_dkk"]), 2)
         for h in history
     ]
 
-    # Enkeltaktie historik til sparklines
     all_names = [s["name"] for s in today_data]
     sparklines = {}
     for name in all_names:
@@ -133,7 +137,7 @@ def generate_html(history, fx):
         spark_data = json.dumps([v for v in sparklines.get(s["name"], []) if v is not None])
         rows += f"""
         <tr>
-          <td>{s['name']}</td>
+          <td>{s['name']} <span class="cur">{s['currency']}</span></td>
           <td class="num">{s['shares']}</td>
           <td class="num">{s['price']} {s['currency']}</td>
           <td class="num">{s['price_dkk']:,.2f}</td>
@@ -171,6 +175,7 @@ def generate_html(history, fx):
   td {{ padding: 10px 10px; border-bottom: 1px solid #f1f5f9; }}
   tr:hover td {{ background: #f8fafc; }}
   .num {{ text-align: right; }}
+  .cur {{ font-size: 0.7rem; color: #94a3b8; margin-left: 4px; }}
   .spark {{ width: 80px; height: 30px; }}
   .fx {{ font-size: 0.8rem; color: #64748b; margin-bottom: 20px; }}
   .chart-wrap {{ height: 260px; position: relative; }}
@@ -227,7 +232,6 @@ def generate_html(history, fx):
 </div>
 
 <script>
-// Porteføljegraf
 const ctx = document.getElementById('portfolioChart').getContext('2d');
 new Chart(ctx, {{
   type: 'line',
@@ -253,7 +257,6 @@ new Chart(ctx, {{
   }}
 }});
 
-// Sparklines
 document.querySelectorAll('.spark').forEach(canvas => {{
   const values = JSON.parse(canvas.dataset.values || '[]');
   if (values.length < 2) return;
