@@ -5,16 +5,16 @@ from datetime import datetime, date
 
 # ── Portefølje ────────────────────────────────────────────────────────────────
 PORTFOLIO = [
-    {"name": "Carlsberg B",                          "ticker": "CARL-B.CO", "shares": 7,  "gak": 846.29,  "currency": "DKK"},
-    {"name": "Kongsberg Gruppen",                    "ticker": "KOG.OL",    "shares": 25, "gak": 110.49,  "currency": "NOK"},
-    {"name": "Kongsberg Maritime ASA",               "ticker": "KM.OL",     "shares": 25, "gak": 34.89,   "currency": "NOK"},
-    {"name": "Microsoft",                            "ticker": "MSFT",      "shares": 1,  "gak": 2882.09,  "currency": "USD"},
-    {"name": "NKT",                                  "ticker": "NKT.CO",    "shares": 12, "gak": 528.83,  "currency": "DKK"},
-    {"name": "Novo Nordisk B",                       "ticker": "NOVO-B.CO", "shares": 17, "gak": 457.77,  "currency": "DKK"},
-    {"name": "NVIDIA",                               "ticker": "NVDA",      "shares": 9,  "gak": 606.04,   "currency": "USD"},
-    {"name": "Rheinmetall",                          "ticker": "RHM.DE",    "shares": 1,  "gak": 3784.60,  "currency": "EUR"},
-    {"name": "Taiwan Semiconductor (TSMC ADR)",      "ticker": "TSM",       "shares": 6,  "gak": 898.87,  "currency": "USD"},
-    {"name": "Vestas Wind Systems",                  "ticker": "VWS.CO",    "shares": 70, "gak": 105.52,  "currency": "DKK"},
+    {"name": "Carlsberg B",                      "ticker": "CARL-B.CO", "shares": 7,  "gak": 846.29,  "currency": "DKK"},
+    {"name": "Kongsberg Gruppen",                "ticker": "KOG.OL",    "shares": 25, "gak": 120.80,  "currency": "DKK"},
+    {"name": "Kongsberg Maritime ASA",           "ticker": "KM.OL",     "shares": 25, "gak": 41.44,   "currency": "DKK"},
+    {"name": "Microsoft",                        "ticker": "MSFT",      "shares": 1,  "gak": 2673.06, "currency": "DKK"},
+    {"name": "NKT",                              "ticker": "NKT.CO",    "shares": 12, "gak": 528.83,  "currency": "DKK"},
+    {"name": "Novo Nordisk B",                   "ticker": "NOVO-B.CO", "shares": 17, "gak": 457.77,  "currency": "DKK"},
+    {"name": "NVIDIA",                           "ticker": "NVDA",      "shares": 9,  "gak": 562.09,  "currency": "DKK"},
+    {"name": "Rheinmetall",                      "ticker": "RHM.DE",    "shares": 1,  "gak": 3795.98, "currency": "DKK"},
+    {"name": "Taiwan Semiconductor (TSMC ADR)",  "ticker": "TSM",       "shares": 6,  "gak": 833.68,  "currency": "DKK"},
+    {"name": "Vestas Wind Systems",              "ticker": "VWS.CO",    "shares": 70, "gak": 105.52,  "currency": "DKK"},
 ]
 
 FX_TICKERS = {
