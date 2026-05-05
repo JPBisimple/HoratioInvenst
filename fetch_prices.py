@@ -6,14 +6,14 @@ from datetime import datetime, date
 # ── Portefølje ────────────────────────────────────────────────────────────────
 PORTFOLIO = [
     {"name": "Carlsberg B",                          "ticker": "CARL-B.CO", "shares": 7,  "gak": 846.29,  "currency": "DKK"},
-    {"name": "Kongsberg Gruppen",                    "ticker": "KOG.OL",    "shares": 25, "gak": 175.38,  "currency": "NOK"},
-    {"name": "Kongsberg Maritime ASA",               "ticker": "KM.OL",     "shares": 25, "gak": 55.38,   "currency": "NOK"},
-    {"name": "Microsoft",                            "ticker": "MSFT",      "shares": 1,  "gak": 418.30,  "currency": "USD"},
+    {"name": "Kongsberg Gruppen",                    "ticker": "KOG.OL",    "shares": 25, "gak": 110.49,  "currency": "NOK"},
+    {"name": "Kongsberg Maritime ASA",               "ticker": "KM.OL",     "shares": 25, "gak": 34.89,   "currency": "NOK"},
+    {"name": "Microsoft",                            "ticker": "MSFT",      "shares": 1,  "gak": 2882.09,  "currency": "USD"},
     {"name": "NKT",                                  "ticker": "NKT.CO",    "shares": 12, "gak": 528.83,  "currency": "DKK"},
     {"name": "Novo Nordisk B",                       "ticker": "NOVO-B.CO", "shares": 17, "gak": 457.77,  "currency": "DKK"},
-    {"name": "NVIDIA",                               "ticker": "NVDA",      "shares": 9,  "gak": 87.96,   "currency": "USD"},
-    {"name": "Rheinmetall",                          "ticker": "RHM.DE",    "shares": 1,  "gak": 508.00,  "currency": "EUR"},
-    {"name": "Taiwan Semiconductor (TSMC ADR)",      "ticker": "TSM",       "shares": 6,  "gak": 130.46,  "currency": "USD"},
+    {"name": "NVIDIA",                               "ticker": "NVDA",      "shares": 9,  "gak": 606.04,   "currency": "USD"},
+    {"name": "Rheinmetall",                          "ticker": "RHM.DE",    "shares": 1,  "gak": 3784.60,  "currency": "EUR"},
+    {"name": "Taiwan Semiconductor (TSMC ADR)",      "ticker": "TSM",       "shares": 6,  "gak": 898.87,  "currency": "USD"},
     {"name": "Vestas Wind Systems",                  "ticker": "VWS.CO",    "shares": 70, "gak": 105.52,  "currency": "DKK"},
 ]
 
