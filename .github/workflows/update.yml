@@ -2,8 +2,8 @@ name: Opdater Horatio Invest rapport
 
 on:
   schedule:
-    # Kører hver time 09:00-18:00 dansk sommertid (07:00-16:00 UTC)
-    - cron: '0 7-16 * * 1-5'
+    # Kører hver time 09:00-18:00 dansk sommertid (06:00-19:00 UTC)
+    - cron: '0 6-20 * * 1-5'
   workflow_dispatch:  # Tillader manuel kørsel
 
 jobs:
