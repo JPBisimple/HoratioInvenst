@@ -2171,10 +2171,10 @@
         "gak_dkk": 110.49,
         "currency": "NOK",
         "price": 311.5,
-        "price_dkk": 216.12,
-        "value_dkk": 5403.0,
-        "gain_dkk": 2640.75,
-        "gain_pct": 95.6,
+        "price_dkk": 216.21,
+        "value_dkk": 5405.25,
+        "gain_dkk": 2643.0,
+        "gain_pct": 95.68,
         "date": "2026-05-22"
       },
       {
@@ -2185,10 +2185,10 @@
         "gak_dkk": 34.89,
         "currency": "NOK",
         "price": 58.3,
-        "price_dkk": 40.45,
-        "value_dkk": 1011.25,
-        "gain_dkk": 139.0,
-        "gain_pct": 15.94,
+        "price_dkk": 40.47,
+        "value_dkk": 1011.75,
+        "gain_dkk": 139.5,
+        "gain_pct": 15.99,
         "date": "2026-05-22"
       },
       {
@@ -2199,10 +2199,10 @@
         "gak_dkk": 2882.09,
         "currency": "USD",
         "price": 418.57,
-        "price_dkk": 2694.59,
-        "value_dkk": 2694.59,
-        "gain_dkk": -187.5,
-        "gain_pct": -6.51,
+        "price_dkk": 2695.13,
+        "value_dkk": 2695.13,
+        "gain_dkk": -186.96,
+        "gain_pct": -6.49,
         "date": "2026-05-22"
       },
       {
@@ -2241,10 +2241,10 @@
         "gak_dkk": 606.04,
         "currency": "USD",
         "price": 215.33,
-        "price_dkk": 1386.21,
-        "value_dkk": 12475.89,
-        "gain_dkk": 7021.53,
-        "gain_pct": 128.73,
+        "price_dkk": 1386.49,
+        "value_dkk": 12478.41,
+        "gain_dkk": 7024.05,
+        "gain_pct": 128.78,
         "date": "2026-05-22"
       },
       {
@@ -2255,10 +2255,10 @@
         "gak_dkk": 3784.6,
         "currency": "EUR",
         "price": 1227.2,
-        "price_dkk": 9169.15,
-        "value_dkk": 9169.15,
-        "gain_dkk": 5384.55,
-        "gain_pct": 142.28,
+        "price_dkk": 9168.53,
+        "value_dkk": 9168.53,
+        "gain_dkk": 5383.93,
+        "gain_pct": 142.26,
         "date": "2026-05-22"
       },
       {
@@ -2268,11 +2268,11 @@
         "gak": 130.46,
         "gak_dkk": 898.87,
         "currency": "USD",
-        "price": 404.33,
-        "price_dkk": 2602.91,
-        "value_dkk": 15617.46,
-        "gain_dkk": 10224.24,
-        "gain_pct": 189.58,
+        "price": 404.52,
+        "price_dkk": 2604.66,
+        "value_dkk": 15627.96,
+        "gain_dkk": 10234.74,
+        "gain_pct": 189.77,
         "date": "2026-05-22"
       },
       {
