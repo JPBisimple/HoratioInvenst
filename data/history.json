@@ -2316,10 +2316,10 @@
         "gak_dkk": 110.49,
         "currency": "NOK",
         "price": 311.5,
-        "price_dkk": 216.03,
-        "value_dkk": 5400.75,
-        "gain_dkk": 2638.5,
-        "gain_pct": 95.52,
+        "price_dkk": 216.12,
+        "value_dkk": 5403.0,
+        "gain_dkk": 2640.75,
+        "gain_pct": 95.6,
         "date": "2026-05-25"
       },
       {
@@ -2330,10 +2330,10 @@
         "gak_dkk": 34.89,
         "currency": "NOK",
         "price": 58.3,
-        "price_dkk": 40.43,
-        "value_dkk": 1010.75,
-        "gain_dkk": 138.5,
-        "gain_pct": 15.88,
+        "price_dkk": 40.45,
+        "value_dkk": 1011.25,
+        "gain_dkk": 139.0,
+        "gain_pct": 15.94,
         "date": "2026-05-25"
       },
       {
@@ -2400,10 +2400,10 @@
         "gak_dkk": 3784.6,
         "currency": "EUR",
         "price": 1243.6,
-        "price_dkk": 9291.06,
-        "value_dkk": 9291.06,
-        "gain_dkk": 5506.46,
-        "gain_pct": 145.5,
+        "price_dkk": 9292.68,
+        "value_dkk": 9292.68,
+        "gain_dkk": 5508.08,
+        "gain_pct": 145.54,
         "date": "2026-05-25"
       },
       {
