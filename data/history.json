@@ -5941,10 +5941,10 @@
         "gak_dkk": 110.49,
         "currency": "NOK",
         "price": 293.1,
-        "price_dkk": 192.98,
-        "value_dkk": 4824.5,
-        "gain_dkk": 2062.25,
-        "gain_pct": 74.66,
+        "price_dkk": 193.15,
+        "value_dkk": 4828.75,
+        "gain_dkk": 2066.5,
+        "gain_pct": 74.81,
         "date": "2026-06-29"
       },
       {
@@ -5955,10 +5955,10 @@
         "gak_dkk": 34.89,
         "currency": "NOK",
         "price": 51.5,
-        "price_dkk": 33.91,
-        "value_dkk": 847.75,
-        "gain_dkk": -24.5,
-        "gain_pct": -2.81,
+        "price_dkk": 33.94,
+        "value_dkk": 848.5,
+        "gain_dkk": -23.75,
+        "gain_pct": -2.72,
         "date": "2026-06-29"
       },
       {
@@ -5968,11 +5968,11 @@
         "gak": 418.3,
         "gak_dkk": 2882.09,
         "currency": "USD",
-        "price": 368.8,
-        "price_dkk": 2412.21,
-        "value_dkk": 2412.21,
-        "gain_dkk": -469.88,
-        "gain_pct": -16.3,
+        "price": 367.61,
+        "price_dkk": 2404.09,
+        "value_dkk": 2404.09,
+        "gain_dkk": -478.0,
+        "gain_pct": -16.59,
         "date": "2026-06-29"
       },
       {
@@ -6011,10 +6011,10 @@
         "gak_dkk": 606.04,
         "currency": "USD",
         "price": 193.84,
-        "price_dkk": 1267.83,
-        "value_dkk": 11410.47,
-        "gain_dkk": 5956.11,
-        "gain_pct": 109.2,
+        "price_dkk": 1267.66,
+        "value_dkk": 11408.94,
+        "gain_dkk": 5954.58,
+        "gain_pct": 109.17,
         "date": "2026-06-29"
       },
       {
@@ -6038,11 +6038,11 @@
         "gak": 130.46,
         "gak_dkk": 898.87,
         "currency": "USD",
-        "price": 449.06,
-        "price_dkk": 2937.12,
-        "value_dkk": 17622.72,
-        "gain_dkk": 12229.5,
-        "gain_pct": 226.76,
+        "price": 451.89,
+        "price_dkk": 2955.25,
+        "value_dkk": 17731.5,
+        "gain_dkk": 12338.28,
+        "gain_pct": 228.77,
         "date": "2026-06-29"
       },
       {
