@@ -9105,5 +9105,150 @@
         "date": "2026-07-28"
       }
     ]
+  },
+  {
+    "date": "2026-07-29",
+    "stocks": [
+      {
+        "name": "Carlsberg B",
+        "ticker": "CARL-B.CO",
+        "shares": 7,
+        "gak": 846.29,
+        "gak_dkk": 846.29,
+        "currency": "DKK",
+        "price": 938.2,
+        "price_dkk": 938.2,
+        "value_dkk": 6567.4,
+        "gain_dkk": 643.37,
+        "gain_pct": 10.86,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Kongsberg Gruppen",
+        "ticker": "KOG.OL",
+        "shares": 25,
+        "gak": 175.38,
+        "gak_dkk": 110.49,
+        "currency": "NOK",
+        "price": 289.0,
+        "price_dkk": 195.65,
+        "value_dkk": 4891.25,
+        "gain_dkk": 2129.0,
+        "gain_pct": 77.07,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Kongsberg Maritime ASA",
+        "ticker": "KMAR.OL",
+        "shares": 25,
+        "gak": 55.38,
+        "gak_dkk": 34.89,
+        "currency": "NOK",
+        "price": 54.08,
+        "price_dkk": 36.61,
+        "value_dkk": 915.25,
+        "gain_dkk": 43.0,
+        "gain_pct": 4.93,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Microsoft",
+        "ticker": "MSFT",
+        "shares": 1,
+        "gak": 418.3,
+        "gak_dkk": 2882.09,
+        "currency": "USD",
+        "price": 393.35,
+        "price_dkk": 2579.75,
+        "value_dkk": 2579.75,
+        "gain_dkk": -302.34,
+        "gain_pct": -10.49,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "NKT",
+        "ticker": "NKT.CO",
+        "shares": 12,
+        "gak": 528.83,
+        "gak_dkk": 528.83,
+        "currency": "DKK",
+        "price": 862.5,
+        "price_dkk": 862.5,
+        "value_dkk": 10350.0,
+        "gain_dkk": 4004.04,
+        "gain_pct": 63.1,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Novo Nordisk B",
+        "ticker": "NOVO-B.CO",
+        "shares": 17,
+        "gak": 457.77,
+        "gak_dkk": 457.77,
+        "currency": "DKK",
+        "price": 334.55,
+        "price_dkk": 334.55,
+        "value_dkk": 5687.35,
+        "gain_dkk": -2094.74,
+        "gain_pct": -26.92,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "NVIDIA",
+        "ticker": "NVDA",
+        "shares": 9,
+        "gak": 87.96,
+        "gak_dkk": 606.04,
+        "currency": "USD",
+        "price": 197.01,
+        "price_dkk": 1292.07,
+        "value_dkk": 11628.63,
+        "gain_dkk": 6174.27,
+        "gain_pct": 113.2,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Rheinmetall",
+        "ticker": "RHM.DE",
+        "shares": 1,
+        "gak": 508.0,
+        "gak_dkk": 3784.6,
+        "currency": "EUR",
+        "price": 1062.6,
+        "price_dkk": 7942.62,
+        "value_dkk": 7942.62,
+        "gain_dkk": 4158.02,
+        "gain_pct": 109.87,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Taiwan Semiconductor (TSMC ADR)",
+        "ticker": "TSM",
+        "shares": 6,
+        "gak": 130.46,
+        "gak_dkk": 898.87,
+        "currency": "USD",
+        "price": 392.31,
+        "price_dkk": 2572.93,
+        "value_dkk": 15437.58,
+        "gain_dkk": 10044.36,
+        "gain_pct": 186.24,
+        "date": "2026-07-29"
+      },
+      {
+        "name": "Vestas Wind Systems",
+        "ticker": "VWS.CO",
+        "shares": 70,
+        "gak": 105.52,
+        "gak_dkk": 105.52,
+        "currency": "DKK",
+        "price": 167.65,
+        "price_dkk": 167.65,
+        "value_dkk": 11735.5,
+        "gain_dkk": 4349.1,
+        "gain_pct": 58.88,
+        "date": "2026-07-29"
+      }
+    ]
   }
 ]
