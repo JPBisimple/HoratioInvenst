@@ -15221,10 +15221,10 @@
         "gak_dkk": 110.49,
         "currency": "NOK",
         "price": 316.2,
-        "price_dkk": 218.37,
-        "value_dkk": 5459.25,
-        "gain_dkk": 2697.0,
-        "gain_pct": 97.64,
+        "price_dkk": 218.4,
+        "value_dkk": 5460.0,
+        "gain_dkk": 2697.75,
+        "gain_pct": 97.66,
         "date": "2026-09-24"
       },
       {
@@ -15248,11 +15248,11 @@
         "gak": 418.3,
         "gak_dkk": 2882.09,
         "currency": "USD",
-        "price": 496.15,
-        "price_dkk": 3259.36,
-        "value_dkk": 3259.36,
-        "gain_dkk": 377.27,
-        "gain_pct": 13.09,
+        "price": 497.93,
+        "price_dkk": 3272.94,
+        "value_dkk": 3272.94,
+        "gain_dkk": 390.85,
+        "gain_pct": 13.56,
         "date": "2026-09-24"
       },
       {
@@ -15290,11 +15290,11 @@
         "gak": 87.96,
         "gak_dkk": 606.04,
         "currency": "USD",
-        "price": 224.38,
-        "price_dkk": 1474.05,
-        "value_dkk": 13266.45,
-        "gain_dkk": 7812.09,
-        "gain_pct": 143.23,
+        "price": 224.58,
+        "price_dkk": 1476.19,
+        "value_dkk": 13285.71,
+        "gain_dkk": 7831.35,
+        "gain_pct": 143.58,
         "date": "2026-09-24"
       },
       {
@@ -15305,10 +15305,10 @@
         "gak_dkk": 3784.6,
         "currency": "EUR",
         "price": 990.0,
-        "price_dkk": 7401.14,
-        "value_dkk": 7401.14,
-        "gain_dkk": 3616.54,
-        "gain_pct": 95.56,
+        "price_dkk": 7400.65,
+        "value_dkk": 7400.65,
+        "gain_dkk": 3616.05,
+        "gain_pct": 95.55,
         "date": "2026-09-24"
       },
       {
@@ -15319,10 +15319,10 @@
         "gak_dkk": 898.87,
         "currency": "USD",
         "price": 451.15,
-        "price_dkk": 2963.77,
-        "value_dkk": 17782.62,
-        "gain_dkk": 12389.4,
-        "gain_pct": 229.72,
+        "price_dkk": 2965.45,
+        "value_dkk": 17792.7,
+        "gain_dkk": 12399.48,
+        "gain_pct": 229.91,
         "date": "2026-09-24"
       },
       {
